@@ -42,3 +42,8 @@ gem 'jquery-rails'
 group :production do
   gem "pg"
 end
+
+gem 'devise'
+gem 'bootstrap-sass'
+gem "haml-rails", ">= 0.4"
+gem "html2haml", ">= 1.0.1", :group => :development
