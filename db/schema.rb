@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130512094903) do
+ActiveRecord::Schema.define(:version => 20130513160033) do
+
+  create_table "perfis", :force => true do |t|
+    t.string   "nome_exibicao"
+    t.integer  "idade"
+    t.string   "cidade"
+    t.string   "bairro"
+    t.boolean  "trabalha"
+    t.string   "perfil_facebook"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "user_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

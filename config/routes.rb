@@ -1,4 +1,7 @@
 Integratechcaroneiro::Application.routes.draw do
+  resources :perfis
+
+
   devise_for :users
 
   root :to => "home#index"

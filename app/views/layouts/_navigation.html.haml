@@ -9,6 +9,8 @@
   - if user_signed_in?
     %li
       = link_to 'Editar conta', edit_user_registration_path
+    %li
+      = link_to 'Editar Perfil', edit_perfil_path(current_user.perfil)
   - else
     %li
       = link_to 'Cadastre-se', new_user_registration_path

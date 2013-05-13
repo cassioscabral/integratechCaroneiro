@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nome_exibicao: MyString
+  idade: 1
+  cidade: MyString
+  bairro: MyString
+  trabalha: false
+  perfil_facebook: MyString
+
+two:
+  nome_exibicao: MyString
+  idade: 1
+  cidade: MyString
+  bairro: MyString
+  trabalha: false
+  perfil_facebook: MyString

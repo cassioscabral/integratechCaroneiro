@@ -1,0 +1,29 @@
+%h1 Listing perfis
+
+%table
+  %tr
+    %th Nome exibicao
+    %th Idade
+    %th Cidade
+    %th Bairro
+    %th Trabalha
+    %th Perfil facebook
+    %th
+    %th
+    %th
+
+  - @perfis.each do |perfil|
+    %tr
+      %td= perfil.nome_exibicao
+      %td= perfil.idade
+      %td= perfil.cidade
+      %td= perfil.bairro
+      %td= perfil.trabalha
+      %td= perfil.perfil_facebook
+      %td= link_to 'Show', perfil
+      %td= link_to 'Edit', edit_perfil_path(perfil)
+      %td= link_to 'Destroy', perfil, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Perfil', new_perfil_path

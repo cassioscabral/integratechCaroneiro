@@ -1,0 +1,13 @@
+= simple_form_for(@perfil) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :nome_exibicao
+    = f.input :idade
+    = f.input :cidade
+    = f.input :bairro
+    = f.input :trabalha
+    = f.input :perfil_facebook
+
+  .form-actions
+    = f.button :submit

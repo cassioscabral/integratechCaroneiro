@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Nome exibicao:
+  = @perfil.nome_exibicao
+%p
+  %b Idade:
+  = @perfil.idade
+%p
+  %b Cidade:
+  = @perfil.cidade
+%p
+  %b Bairro:
+  = @perfil.bairro
+%p
+  %b Trabalha:
+  = @perfil.trabalha
+%p
+  %b Perfil facebook:
+  = @perfil.perfil_facebook
+
+= link_to 'Edit', edit_perfil_path(@perfil)
+\|
+= link_to 'Back', perfis_path
