@@ -1,4 +1,5 @@
 class PerfisController < ApplicationController
+  before_filter :authenticate_user!
   # GET /perfis
   # GET /perfis.json
   def index
