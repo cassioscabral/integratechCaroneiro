@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Hora ida:
+  = @carona.hora_ida
+%p
+  %b Hora volta:
+  = @carona.hora_volta
+%p
+  %b Limite pessoas:
+  = @carona.limite_pessoas
+%p
+  %b Valor por pessoa:
+  = @carona.valor_por_pessoa
+
+= link_to 'Edit', edit_carona_path(@carona)
+\|
+= link_to 'Back', caronas_path

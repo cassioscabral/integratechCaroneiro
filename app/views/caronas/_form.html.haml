@@ -1,0 +1,11 @@
+= simple_form_for(@carona) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :hora_ida
+    = f.input :hora_volta
+    = f.input :limite_pessoas
+    = f.input :valor_por_pessoa
+
+  .form-actions
+    = f.button :submit

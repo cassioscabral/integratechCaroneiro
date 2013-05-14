@@ -1,0 +1,25 @@
+%h1 Listing caronas
+
+%table
+  %tr
+    %th Hora ida
+    %th Hora volta
+    %th Limite pessoas
+    %th Valor por pessoa
+    %th
+    %th
+    %th
+
+  - @caronas.each do |carona|
+    %tr
+      %td= carona.hora_ida
+      %td= carona.hora_volta
+      %td= carona.limite_pessoas
+      %td= carona.valor_por_pessoa
+      %td= link_to 'Show', carona
+      %td= link_to 'Edit', edit_carona_path(carona)
+      %td= link_to 'Destroy', carona, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Carona', new_carona_path

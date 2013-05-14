@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  hora_ida: 2013-05-14 13:51:19
+  hora_volta: 2013-05-14 13:51:19
+  limite_pessoas: 1
+  valor_por_pessoa: 1.5
+
+two:
+  hora_ida: 2013-05-14 13:51:19
+  hora_volta: 2013-05-14 13:51:19
+  limite_pessoas: 1
+  valor_por_pessoa: 1.5

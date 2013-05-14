@@ -1,4 +1,7 @@
 Integratechcaroneiro::Application.routes.draw do
+  resources :caronas
+
+
   resources :perfis
 
 
