@@ -1,4 +1,5 @@
 class CaronasController < ApplicationController
+  before_filter :authenticate_user!
   # GET /caronas
   # GET /caronas.json
   def index

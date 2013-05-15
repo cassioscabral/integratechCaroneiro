@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130513160033) do
+ActiveRecord::Schema.define(:version => 20130514165119) do
+
+  create_table "caronas", :force => true do |t|
+    t.time     "hora_ida"
+    t.time     "hora_volta"
+    t.integer  "limite_pessoas"
+    t.float    "valor_por_pessoa"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "perfis", :force => true do |t|
     t.string   "nome_exibicao"
