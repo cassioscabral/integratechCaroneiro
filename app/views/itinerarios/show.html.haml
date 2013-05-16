@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Latitude:
+  = @itinerario.latitude
+%p
+  %b Longitude:
+  = @itinerario.longitude
+%p
+  %b Ponto inicial:
+  = @itinerario.ponto_inicial
+%p
+  %b Ponto final:
+  = @itinerario.ponto_final
+%p
+  %b Observacao:
+  = @itinerario.observacao
+
+= link_to 'Edit', edit_itinerario_path(@itinerario)
+\|
+= link_to 'Back', itinerarios_path

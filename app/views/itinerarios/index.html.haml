@@ -1,0 +1,27 @@
+%h1 Listing itinerarios
+
+%table
+  %tr
+    %th Latitude
+    %th Longitude
+    %th Ponto inicial
+    %th Ponto final
+    %th Observacao
+    %th
+    %th
+    %th
+
+  - @itinerarios.each do |itinerario|
+    %tr
+      %td= itinerario.latitude
+      %td= itinerario.longitude
+      %td= itinerario.ponto_inicial
+      %td= itinerario.ponto_final
+      %td= itinerario.observacao
+      %td= link_to 'Show', itinerario
+      %td= link_to 'Edit', edit_itinerario_path(itinerario)
+      %td= link_to 'Destroy', itinerario, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Itinerario', new_itinerario_path

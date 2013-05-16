@@ -1,0 +1,12 @@
+= simple_form_for(@itinerario) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :latitude
+    = f.input :longitude
+    = f.input :ponto_inicial
+    = f.input :ponto_final
+    = f.input :observacao
+
+  .form-actions
+    = f.button :submit

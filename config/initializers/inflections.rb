@@ -18,4 +18,5 @@
 ActiveSupport::Inflector.inflections do |inflect|
    inflect.irregular 'perfil', 'perfis'
    inflect.irregular 'carona', 'caronas'
+   inflect.irregular 'itinerario', 'itinerarios'
 end

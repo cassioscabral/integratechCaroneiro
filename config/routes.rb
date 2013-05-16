@@ -1,4 +1,7 @@
 Integratechcaroneiro::Application.routes.draw do
+  resources :itinerarios
+
+
   resources :caronas
 
   match "caronas" => "caronas#index"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130515162440) do
+ActiveRecord::Schema.define(:version => 20130516001443) do
 
   create_table "caronas", :force => true do |t|
     t.time     "hora_ida"
@@ -26,6 +26,17 @@ ActiveRecord::Schema.define(:version => 20130515162440) do
   create_table "caronas_users", :id => false, :force => true do |t|
     t.integer "carona_id"
     t.integer "user_id"
+  end
+
+  create_table "itinerarios", :force => true do |t|
+    t.float    "latitude"
+    t.float    "longitude"
+    t.float    "ponto_inicial"
+    t.float    "ponto_final"
+    t.text     "observacao"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "carona_id"
   end
 
   create_table "perfis", :force => true do |t|
