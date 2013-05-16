@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130514165119) do
+ActiveRecord::Schema.define(:version => 20130515162440) do
 
   create_table "caronas", :force => true do |t|
     t.time     "hora_ida"
@@ -20,6 +20,12 @@ ActiveRecord::Schema.define(:version => 20130514165119) do
     t.float    "valor_por_pessoa"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.integer  "owner"
+  end
+
+  create_table "caronas_users", :id => false, :force => true do |t|
+    t.integer "carona_id"
+    t.integer "user_id"
   end
 
   create_table "perfis", :force => true do |t|

@@ -10,5 +10,6 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_one :perfil, autosave: true
+  has_and_belongs_to_many :caronas
   before_create :build_perfil
 end

@@ -1,9 +1,8 @@
 Integratechcaroneiro::Application.routes.draw do
   resources :caronas
 
-
+  match "caronas" => "caronas#index"
   resources :perfis
-
 
   devise_for :users
 

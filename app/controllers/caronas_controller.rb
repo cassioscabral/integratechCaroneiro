@@ -3,7 +3,8 @@ class CaronasController < ApplicationController
   # GET /caronas
   # GET /caronas.json
   def index
-    @caronas = Carona.all
+      @caronas = Carona.all 
+    
 
     respond_to do |format|
       format.html # index.html.erb
@@ -42,6 +43,8 @@ class CaronasController < ApplicationController
   # POST /caronas.json
   def create
     @carona = Carona.new(params[:carona])
+    @carona.users << current_user #adiciona o usuario atual a lista de caroneiros
+    @carona.owner = current_user
 
     respond_to do |format|
       if @carona.save
@@ -74,11 +77,17 @@ class CaronasController < ApplicationController
   # DELETE /caronas/1.json
   def destroy
     @carona = Carona.find(params[:id])
-    @carona.destroy
+    if @carona.owner == current_user
+      @carona.destroy
+    else
+  
+    end
+    
 
     respond_to do |format|
       format.html { redirect_to caronas_url }
       format.json { head :no_content }
     end
   end
+
 end
