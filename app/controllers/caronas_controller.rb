@@ -90,4 +90,17 @@ class CaronasController < ApplicationController
     end
   end
 
+  def adicionar_caroneiro
+    @carona = Carona.find(params[:id])
+    if @carona.limite_pessoas > 0
+
+      unless @carona.users.include?(current_user)
+        @carona.users << current_user #adiciona o usuario atual a lista de caroneiro
+        @carona.limite_pessoas -= 1
+      end
+      @carona.save
+      redirect_to caronas_path
+    end
+    
+  end
 end

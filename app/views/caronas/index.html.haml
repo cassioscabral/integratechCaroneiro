@@ -1,4 +1,4 @@
-%h1 Listing caronas
+%h1 Caronas Disponíveis
 
 %table
   %tr
@@ -6,20 +6,23 @@
     %th Hora volta
     %th Limite pessoas
     %th Valor por pessoa
-    %th
-    %th
-    %th
+    
 
   - @caronas.each do |carona|
     %tr
-      %td= carona.hora_ida
-      %td= carona.hora_volta
+      %td= carona.hora_ida.strftime('%H:%M:%S')
+      %td= carona.hora_volta.strftime('%H:%M:%S')
       %td= carona.limite_pessoas
       %td= carona.valor_por_pessoa
-      %td= link_to 'Show', carona
-      %td= link_to 'Edit', edit_carona_path(carona)
-      %td= link_to 'Destroy', carona, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Checar', carona
+      </br>
+      -if carona.id == current_user.id
+        %td= link_to 'Editar', edit_carona_path(carona)
+        %td= link_to 'Deletar', carona, :method => :delete, :data => { :confirm => 'Tem certeza?' }
+      %td  
+        %button{:class => "btn"}= link_to "getCarona o/", adicionar_caroneiro_path(carona)
 
+        
 %br
 
-= link_to 'New Carona', new_carona_path
+= link_to 'Nova Carona', new_carona_path
