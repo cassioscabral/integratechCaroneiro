@@ -16,7 +16,7 @@ class CaronasController < ApplicationController
   # GET /caronas/1.json
   def show
     @carona = Carona.find(params[:id])
-
+    @caroneiros = @carona.users
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @carona }

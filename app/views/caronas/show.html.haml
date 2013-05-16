@@ -16,3 +16,11 @@
 = link_to 'Edit', edit_carona_path(@carona)
 \|
 = link_to 'Back', caronas_path
+\|
+
+</br>
+</br>
+
+- @caroneiros.each do |caroneiro|
+  %tr
+    %td=caroneiro.perfil.nome_exibicao

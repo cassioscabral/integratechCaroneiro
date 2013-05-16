@@ -11,6 +11,8 @@
       = link_to 'Editar conta', edit_user_registration_path
     %li
       = link_to 'Editar Perfil', edit_perfil_path(current_user.perfil)
+    %li
+      = link_to 'Caronas', caronas_path
   - else
     %li
       = link_to 'Cadastre-se', new_user_registration_path
