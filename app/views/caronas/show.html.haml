@@ -12,9 +12,9 @@
 %p
   %b Valor por pessoa:
   = @carona.valor_por_pessoa
-
-= link_to 'Edit', edit_carona_path(@carona)
-\|
+-if @carona.owner == current_user.id
+  = link_to 'Edit', edit_carona_path(@carona)
+  \|
 = link_to 'Back', caronas_path
 
 

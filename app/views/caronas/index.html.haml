@@ -16,7 +16,7 @@
       %td= carona.valor_por_pessoa
       %td= link_to 'Checar', carona
       </br>
-      -if carona.id == current_user.id
+      -if carona.owner == current_user.id
         %td= link_to 'Editar', edit_carona_path(carona)
         %td= link_to 'Deletar', carona, :method => :delete, :data => { :confirm => 'Tem certeza?' }
       %td  

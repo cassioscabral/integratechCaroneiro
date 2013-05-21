@@ -44,11 +44,11 @@ class CaronasController < ApplicationController
   def create
     @carona = Carona.new(params[:carona])
     @carona.users << current_user #adiciona o usuario atual a lista de caroneiros
-    @carona.owner = current_user
+    @carona.owner = current_user.id
 
     respond_to do |format|
       if @carona.save
-        format.html { redirect_to @carona, notice: 'Carona was successfully created.' }
+        format.html { redirect_to @carona, notice: 'Carona criada.' }
         format.json { render json: @carona, status: :created, location: @carona }
       else
         format.html { render action: "new" }
@@ -64,7 +64,7 @@ class CaronasController < ApplicationController
 
     respond_to do |format|
       if @carona.update_attributes(params[:carona])
-        format.html { redirect_to @carona, notice: 'Carona was successfully updated.' }
+        format.html { redirect_to @carona, notice: 'Carona atualizada.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -77,10 +77,9 @@ class CaronasController < ApplicationController
   # DELETE /caronas/1.json
   def destroy
     @carona = Carona.find(params[:id])
-    if @carona.owner == current_user
+    logger.debug "Carona.owner == #{@carona.owner} --- current_user == #{current_user}"
+    if @carona.owner == current_user.id
       @carona.destroy
-    else
-  
     end
     
 
@@ -97,8 +96,9 @@ class CaronasController < ApplicationController
       unless @carona.users.include?(current_user)
         @carona.users << current_user #adiciona o usuario atual a lista de caroneiro
         @carona.limite_pessoas -= 1
+        @carona.save
       end
-      @carona.save
+     
       redirect_to caronas_path
     end
     
