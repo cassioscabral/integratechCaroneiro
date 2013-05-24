@@ -13,13 +13,15 @@
       %nav.navbar-inner
         .container
           = render 'layouts/navigation'
-    #main{:role => "main"}
-      .container
-        .content
-          .row
-            .span12
-              = render 'layouts/messages'
-              = yield
-          %footer
-      / ! end of .container
-    / ! end of #main
+
+    - unless params[:controller] == "home" and params[:action] == "index" 
+      #main{:role => "main"}
+        .container
+          .content
+            .row
+              .span12
+                = render 'layouts/messages'
+                = yield
+            %footer
+        / ! end of .container
+      / ! end of #main

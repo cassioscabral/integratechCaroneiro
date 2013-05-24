@@ -1,11 +1,19 @@
 %p#notice= notice
-
+%h2 Caroneiros
+- @caroneiros.each do |caroneiro|
+  %tr
+  -if @carona.owner == caroneiro.id
+    Dono da carona:
+  %td=caroneiro.perfil.nome_exibicao
+  </br>
+</br>
+</br>
 %p
   %b Hora ida:
-  = @carona.hora_ida.strftime('%H:%M:%S')
+  = @carona.hora_ida.strftime('%H:%M')
 %p
   %b Hora volta:
-  = @carona.hora_volta.strftime('%H:%M:%S')
+  = @carona.hora_volta.strftime('%H:%M')
 %p
   %b Limite pessoas:
   = @carona.limite_pessoas
@@ -18,12 +26,7 @@
 = link_to 'Back', caronas_path
 
 
-</br>
-</br>
-%h2 Caroneiros
-- @caroneiros.each do |caroneiro|
-  %tr
-  -if @carona.owner == caroneiro.id
-    Dono da carona:
-  %td=caroneiro.perfil.nome_exibicao
-  </br>
+\----------------------
+
+
+
