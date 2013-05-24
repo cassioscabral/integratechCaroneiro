@@ -1,7 +1,7 @@
 %p#notice= notice
 
 %p
-  %b Nome exibicao:
+  %b Nome exibição:
   = @perfil.nome_exibicao
 %p
   %b Idade:
@@ -19,6 +19,6 @@
   %b Perfil facebook:
   = @perfil.perfil_facebook
 
-= link_to 'Edit', edit_perfil_path(@perfil)
+= link_to 'Editar', edit_perfil_path(@perfil)
 \|
-= link_to 'Back', perfis_path
+= link_to 'Voltar', perfis_path
